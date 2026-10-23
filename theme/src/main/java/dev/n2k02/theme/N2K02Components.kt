@@ -1,3 +1,4 @@
+@file:OptIn(androidx.compose.material3.ExperimentalMaterial3ExpressiveApi::class)
 package dev.n2k02.theme
 
 import androidx.compose.foundation.layout.*
@@ -18,14 +19,10 @@ fun N2K02LoadingButton(
 ) {
     Button(onClick = onClick, modifier = modifier, enabled = enabled && !loading) {
         if (loading) {
-            CircularProgressIndicator(
-                modifier = Modifier.size(20.dp),
-                strokeWidth = 2.dp,
-                color = MaterialTheme.colorScheme.onPrimary,
-            )
+            LoadingIndicator(modifier = Modifier.size(24.dp))
             Spacer(Modifier.width(10.dp))
         }
-        Text(if (loading) "Please wait…" else text)
+        Text(if (loading) "$text…" else text)
     }
 }
 
