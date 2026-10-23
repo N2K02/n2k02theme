@@ -4,7 +4,7 @@ plugins {
 }
 android {
     namespace = "dev.n2k02.theme"
-    compileSdk = 37
+    compileSdk = 36
     defaultConfig { minSdk = 26 }
     buildFeatures { compose = true }
     compileOptions {
