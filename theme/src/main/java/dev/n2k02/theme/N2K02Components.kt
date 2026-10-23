@@ -2,7 +2,6 @@
 package dev.n2k02.theme
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -69,7 +68,7 @@ fun N2K02StatusCard(
     modifier: Modifier = Modifier,
     action: @Composable (() -> Unit)? = null,
 ) {
-    Card(modifier = modifier.fillMaxWidth(), shape = RoundedCornerShape(24.dp)) {
+    Card(modifier = modifier.fillMaxWidth(), shape = MaterialTheme.shapes.large) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text(title, style = MaterialTheme.typography.titleMedium)
             Text(detail, style = MaterialTheme.typography.bodyMedium,
