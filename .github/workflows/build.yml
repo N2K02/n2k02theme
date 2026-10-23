@@ -13,7 +13,7 @@ jobs:
           distribution: temurin
           java-version: '17'
       - name: Install SDK
-        run: yes | sdkmanager "platforms;android-37" "build-tools;37.0.0" || true
+        run: sdkmanager "platforms;android-37" "build-tools;37.0.0"
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '9.6.0'
