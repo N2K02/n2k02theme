@@ -21,4 +21,9 @@ jobs:
         with:
           gradle-version: '9.6.0'
       - name: Compile library
-        run: gradle :theme:assembleDebug --stacktrace
+        run: gradle :theme:assembleDebug :theme:assembleRelease :theme:publishReleasePublicationToMavenLocal -PthemeVersion=0.1.0-ci --stacktrace
+      - name: Verify staged Maven package
+        run: |
+          test -s "$HOME/.m2/repository/dev/n2k02/theme/0.1.0-ci/theme-0.1.0-ci.aar"
+          test -s "$HOME/.m2/repository/dev/n2k02/theme/0.1.0-ci/theme-0.1.0-ci.pom"
+          test -s "$HOME/.m2/repository/dev/n2k02/theme/0.1.0-ci/theme-0.1.0-ci.module"
