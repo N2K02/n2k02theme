@@ -5,7 +5,7 @@ plugins {
 }
 android {
     namespace = "dev.n2k02.theme"
-    compileSdk = 35
+    compileSdk = 36
     defaultConfig { minSdk = 26 }
     buildFeatures { compose = true }
     compileOptions {
@@ -16,7 +16,7 @@ android {
 }
 dependencies {
     implementation(platform("androidx.compose:compose-bom:2025.04.01"))
-    implementation("androidx.compose.material3:material3:1.4.0")
+    implementation("androidx.compose.material3:material3:1.5.0-beta01")
     implementation("androidx.compose.material:material-icons-core")
     implementation("androidx.compose.ui:ui")
 }
