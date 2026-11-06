@@ -19,7 +19,7 @@ jobs:
           "$SDKMANAGER" "platforms;android-36" "build-tools;36.0.0"
       - uses: gradle/actions/setup-gradle@v6
         with:
-          gradle-version: '9.6.0'
+          gradle-version: '9.8.2'
       - name: Compile library
         run: gradle :theme:assembleDebug :theme:assembleRelease :theme:publishReleasePublicationToMavenLocal -PthemeVersion=0.1.0-ci --stacktrace
       - name: Verify staged Maven package
