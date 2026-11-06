@@ -1,12 +1,11 @@
 plugins {
     id("com.android.library")
-    id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
     id("maven-publish")
 }
 android {
     namespace = "dev.n2k02.theme"
-    compileSdk = 36
+    compileSdk { version = release(37) { minorApiLevel = 0 } }
     defaultConfig { minSdk = 26 }
     buildFeatures { compose = true }
     publishing { singleVariant("release") { withSourcesJar() } }
@@ -16,8 +15,8 @@ android {
     }
 }
 dependencies {
-    implementation(platform("androidx.compose:compose-bom:2025.04.01"))
-    implementation("androidx.compose.material3:material3:1.5.0-beta01")
+    implementation(platform("androidx.compose:compose-bom:2026.09.00"))
+    implementation("androidx.compose.material3:material3:1.5.0-beta02")
     implementation("androidx.compose.material:material-icons-core")
     implementation("androidx.compose.ui:ui")
 }
